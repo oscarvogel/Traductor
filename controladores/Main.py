@@ -1,4 +1,7 @@
 # coding=utf-8
+import html2text
+import requests
+
 from controladores.ControladorBase import ControladorBase
 from libs.Traductor import Traductor
 from vistas.Main import MainView
@@ -31,4 +34,9 @@ class MainController(ControladorBase):
             )
 
     def BajarTextoURL(self):
-        pass
+        res = requests.get(self.view.textURL.text())
+        h = html2text.HTML2Text()
+        h.ignore_links = True
+        self.view.textTextoTraducir.setText(
+            h.handle(res.text)
+        )
