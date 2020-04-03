@@ -2,6 +2,7 @@
 import datetime
 import decimal
 
+import googletrans
 from PyQt5 import QtCore
 from PyQt5.QtGui import QFont
 from PyQt5.QtWidgets import QComboBox
@@ -244,7 +245,5 @@ class ComboIdiomas(Combo):
 
     def __init__(self, parent=None, *args, **kwargs):
         Combo.__init__(self, parent, *args, **kwargs)
-        self.CargaDatosValores(data={
-            'en': 'Ingles',
-            'es': 'Español',
-        })
+        data = googletrans.LANGUAGES
+        self.CargaDatosValores(data=data)
