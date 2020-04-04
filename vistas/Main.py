@@ -42,7 +42,7 @@ class MainView(VistaBase):
         layoutPpal.addWidget(self.textTraducido)
 
         layoutBotones = QHBoxLayout()
-        self.btnTraducir = Boton(texto="Tradudir",
+        self.btnTraducir = Boton(texto="Traducir",
                                  imagen=imagen("iconfinder_logo_brand_brands_logos_translate_google_2230965.png"))
         self.btnCerrar = Boton(texto="Salir", imagen=imagen("iconfinder_free-29_618316.png"))
         layoutBotones.addWidget(self.btnTraducir)

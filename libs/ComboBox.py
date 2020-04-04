@@ -245,5 +245,8 @@ class ComboIdiomas(Combo):
 
     def __init__(self, parent=None, *args, **kwargs):
         Combo.__init__(self, parent, *args, **kwargs)
-        data = googletrans.LANGUAGES
+        data = {
+            'en' : 'Ingles',
+            'es' : 'Español'
+        }
         self.CargaDatosValores(data=data)
